@@ -1,0 +1,386 @@
+/* General webpage styling 
+
+body {
+    font-family: "Helvetica", sans-serif;
+    background: #433E3E;
+    color:#fff
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.row div {
+    height: 20px;
+    width: 80px;
+    margin: 15px;
+}
+
+.cell {
+    font-size: 20px;
+}
+
+#result, #score, #motm1, #motm2, #motm3,
+#motm4, #motm5, #motm6, #motm7, #motm8,
+#motm9, #motm10, #motm11,#motm12,#motm13,
+#motm14,#motm15,#motm16,#motm17,#motm18, #motm19 {
+    display: inline-block;
+    flex-direction: row;
+    width: 80px;
+    margin-top: 30px;
+    margin-right: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid #080808;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#add-btn {
+    display: flex;
+    flex-direction: row;
+    width: 80px;
+    margin-top: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+    gap: 25px;
+    border: 2px solid #0066FF;
+    background-color: #0066FF;
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#add-btn:hover {
+    transform: scale(1.05);
+}
+
+#add-btn:active {
+    transform: translate(2px);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+}
+
+
+::placeholder {
+    color: #696969
+}
+
+.cell-cup {
+    color: #228B22;
+    font-size: 16px;
+}
+
+.cell-final {
+    color: red;
+    font-size: 16px;
+}
+
+.cell-mday, .cell-easter {
+    color: #20B2AA;
+    font-size: 16px;
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #daa520;
+    color: #080808;
+    overflow: hidden;
+}
+
+.topnav img {
+    width: 90px;
+    height: 105px;
+    margin: 4px;
+}
+
+.topnav p {
+    align-self: center;
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.topnav a {
+    float: left;
+    color: #080808;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.topnav a:hover {
+    background-color: #0066FF;
+    color: #fff;
+}
+
+.logout {
+    margin-top: 32px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: right;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+*/
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    background: #433e3e;
+    color: #fff;
+}
+
+/* Top Navigation */
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #daa520;
+    color: #080808;
+    height: 100px;
+}
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.topnav a:hover {
+    background-color: #fff;
+    color: #080808;
+
+}
+
+.topnav img {
+    max-width: 120px;
+    height: 100px;
+}
+
+.topnav p {
+    align-items: center;
+    font-size: 42px;
+
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #433e3e;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Table Section */
+.table {
+    margin: 20px;
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    min-width: 600px; /* Ensures rows don’t shrink too much */
+}
+
+#result, #score, #motm1, #motm2, #motm3,
+#motm4, #motm5, #motm6, #motm7, #motm8,
+#motm9, #motm10, #motm11,#motm12,#motm13,
+#motm14,#motm15,#motm16,#motm17,#motm18, #motm19 {
+    display: inline-block;
+    flex-direction: row;
+    width: 80px;
+    margin-top: 20px;
+    margin-right: 250px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid #080808;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#add-btn {
+    display: flex;
+    flex-direction: row;
+    width: 80px;
+    margin-top: 30px;
+    padding: auto;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+    gap: 25px;
+    border: 2px solid #daa520;
+    background-color: #daa520;
+    color: #080808;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#add-btn:hover {
+    transform: scale(1.05);
+}
+
+#add-btn:active {
+    transform: translate(2px);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+}
+
+::placeholder {
+    color: #696969;
+}
+
+.cell {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    min-width: 100px; /* Prevents columns from shrinking */
+}
+
+/* Highlighting Cell Rows */
+.cell-cup {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #228b22;
+    font-weight: bold;
+    min-width: 100px;
+    color: #fff;
+}
+
+.cell-final {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #ff0000;
+    font-weight: bold;
+    min-width: 100px;
+    color: #fff;
+}
+
+.cell-mday, .cell-easter {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #20b2aa;
+    font-weight: bold;
+    min-width: 100px;
+    color: #fff;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .topnav {
+        display: flex;
+        flex-wrap: nowrap; /* Keeps .logout on the same line */
+    }
+
+    .topnav img {
+        max-width: 100px; /* Shrink the logo slightly for smaller screens */
+    }
+
+    .logout {
+        margin-left: auto; /* Ensures alignment to the right */
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .table {
+        overflow-x: auto; /* Allows horizontal scrolling on small screens */
+    }
+
+    .row {
+        flex-wrap: nowrap; /* Prevents row wrapping */
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .row, .cell {
+        font-size: 14px;
+    }
+
+    .logout {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
