@@ -1,57 +1,32 @@
 
-let players = [
-    ' ',
-    'AG',
-    'AJ',
-    'MC',
-    'TC',
-    'MQ',
-    'SC',
-    'IC',
-    'EM',
-    'KN',
-    'JN',
-    'CL',
-    'FM',
-    'OC',
-    'KM',
-    'EK',
-    'JR',
-    'TR',
-    'JKO',
-    'JD',
-    'KC',
-    'RJ',
-    'LM'
-]
-let player = players.sort();
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("JS Loaded");
 
-var option = "";
-for(var i = 0; i < player.length; i ++) {
-    option += '<option value="' + player[i] + '">' + player[i] + "</option>"
+    fetch("get_info.php")
+        .then(response => response.json())  // Directly parse the JSON
+        .then(data => {
+            if(Array.isArray(data) && data.length > 0) {
+                console.log("Updating HTML....");
 
-}
+                // Loop through the database and update the correct id
+                data.forEach((game, index) => {
+                    let rowNum = index + 1; //IDS start from 1
+                    let resultElem = document.getElementById(`result${rowNum}`);
+                    let scoreElem = document.getElementById(`score${rowNum}`);
+                    let motmElem = document.getElementById(`motm${rowNum}`);
 
-document.getElementById('motm1').innerHTML = option
-document.getElementById('motm2').innerHTML = option
-document.getElementById('motm3').innerHTML = option
-document.getElementById('motm4').innerHTML = option
-document.getElementById('motm5').innerHTML = option
-document.getElementById('motm6').innerHTML = option
-document.getElementById('motm7').innerHTML = option
-document.getElementById('motm8').innerHTML = option
-document.getElementById('motm9').innerHTML = option
-document.getElementById('motm10').innerHTML = option
-document.getElementById('motm11').innerHTML = option
-document.getElementById('motm12').innerHTML = option
-document.getElementById('motm13').innerHTML = option
-document.getElementById('motm14').innerHTML = option
-document.getElementById('motm15').innerHTML = option
-document.getElementById('motm16').innerHTML = option
-document.getElementById('motm17').innerHTML = option
-document.getElementById('motm18').innerHTML = option
-document.getElementById('motm19').innerHTML = option
-document.getElementById('motm20').innerHTML = option
+                    if (resultElem && scoreElem && motmElem) {
+                        resultElem.value = game.result;
+                        scoreElem.value = game.score;
+                        motmElem.value = game.motm;
+                    }
+                });
 
-    
+                console.log("HTML Updated");
+            } else {
+                console.error("Unexpected data format or empty data:", data);
+            }
+        })
+        .catch(error => console.error("Error fetching data", error));
+    });
 
