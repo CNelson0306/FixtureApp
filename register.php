@@ -19,7 +19,7 @@ if (isset($_POST['signUp'])) {
         echo '<script> alert("Registration Success!")</script>';
 
         if ($conn->query($insertQuery) == TRUE) {
-            header("location: login.php");
+            header("location: index.php");
         } else {
             echo "Error:" . $conn->error;
         }

@@ -16,7 +16,7 @@ include "connect.php"; ?>
     <img src="./img/bont_rfc.JPG" alt="Rugby club logo">
     <p>Pontarddulais RFC</p>
     <div class="logout">
-        <a href="logout.php">Log Out</a>
+        <a href="index.php">Log Out</a>
     </div>
 </div>
 
